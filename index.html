@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="light">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beauty Loft</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <img src="images/logo.svg" alt="Salon Logo" class="logo" />
+        <nav>
+          <a href="#services">Servicii</a>
+          <a href="#about">Despre Noi</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section id="hero">
+        <div class="hero-overlay">
+            <h1>Feel Beautiful, Inside & Out</h1>
+            <p>Your journey to confidence begins here</p>
+            <button onclick="bookNow()">Book Appointment</button>
+          </div>
+      </section>
+
+      <section id="services">
+        <h2 class="reveal">Our Services</h2>
+        
+        <div class="services-container">
+          
+          <div class="service-card reveal">
+            <img src="images/hair.jpg" alt="Frizur&#259;">
+            <h3>Hair Styling</h3>
+            <p>Trendy cuts, blowouts, and color treatments tailored to you.</p>
+          </div>
+      
+          <div class="service-card reveal">
+            <img src="images/laminare.jpg" alt="laminare">
+            <h3>Laminarea &#351;i vopsirea genelor</h3>
+            <p>idk yet ask chat</p>
+          </div>
+      
+          <div class="service-card reveal">
+            <img src="images/micropigmentare.jpg" alt="Micropigmentare">
+            <h3>Micropigmentare</h3>
+            <p>idk ask</p>
+          </div>
+
+          <div class="service-card reveal">
+            <img src="images/henna.jpg" alt="Henna">
+            <h3>Vopsirea spr&acirc;ncenelor cu henna</h3>
+            <p>idk yet</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="about-container reveal">
+          <div class="about-text">
+            <h2>Despre Noi</h2>
+            <p>
+              La salonul nostru de frumusețe din Chișinău, ne dedicăm să oferim servicii de înaltă calitate care evidențiază frumusețea ta naturală. 
+              Echipa noastră de profesioniști este mereu la curent cu cele mai noi tendințe și tehnici.
+            </p>
+            <p>
+              Fie că este vorba de o schimbare de look sau de o zi de răsfăț, suntem aici să îți oferim o experiență de neuitat.
+            </p>
+          </div>
+          <div class="about-image">
+            <img src="images/salon.jpg" alt="Salon image">
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact-container reveal">
+          <div class="contact-text">
+            <h2>Contact Us</h2>
+            <p>Have questions, suggestions, or just want to chat? Reach out to us below. We'd love to hear from you!</p>
+          </div>
+      
+          <form class="contact-form">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>
+
+      <footer>
+        <p>&copy; 2025 Beauty Salon Chișinău</p>
+      </footer>
+    
+      <script src="script.js"></script>
+    
+</body>
+
+</html>
