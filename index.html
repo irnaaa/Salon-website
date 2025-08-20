@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8" />
     <meta name="color-scheme" content="light">
@@ -19,39 +19,39 @@
 
       <section id="hero">
         <div class="hero-overlay">
-            <h1>Feel Beautiful, Inside & Out</h1>
-            <p>Your journey to confidence begins here</p>
-            <button onclick="bookNow()">Book Appointment</button>
+            <h1>Simte-te frumoasă</h1>
+            <p>Călătoria ta spre încredere începe aici</p>
+            <button onclick="bookNow()">Înscrie-te acum</button>
           </div>
       </section>
 
       <section id="services">
-        <h2 class="reveal">Our Services</h2>
+        <h2 class="reveal">Serviciile noastre</h2>
         
         <div class="services-container">
           
           <div class="service-card reveal">
             <img src="images/hair.jpg" alt="Frizur&#259;">
-            <h3>Hair Styling</h3>
-            <p>Trendy cuts, blowouts, and color treatments tailored to you.</p>
+            <h3>Stilizarea părului</h3>
+            <p>Tunsori, coafuri și culori care te reprezintă.</p>
           </div>
       
           <div class="service-card reveal">
             <img src="images/laminare.jpg" alt="laminare">
-            <h3>Laminarea &#351;i vopsirea genelor</h3>
-            <p>idk yet ask chat</p>
+            <h3>Laminarea și vopsirea genelor</h3>
+            <p>Privire definită și gene perfecte, fără machiaj.</p>
           </div>
       
           <div class="service-card reveal">
             <img src="images/micropigmentare.jpg" alt="Micropigmentare">
             <h3>Micropigmentare</h3>
-            <p>idk ask</p>
+            <p>Sprâncene, buze și eyeliner perfect conturate, cu un aspect natural și de durată.</p>
           </div>
 
           <div class="service-card reveal">
             <img src="images/henna.jpg" alt="Henna">
-            <h3>Vopsirea spr&acirc;ncenelor cu henna</h3>
-            <p>idk yet</p>
+            <h3>Vopsirea sprâncenelor cu henna</h3>
+            <p>Sprâncene definite, cu o culoare intensă și naturală, obținută din henna.</p>
           </div>
         </div>
       </section>
@@ -61,7 +61,7 @@
           <div class="about-text">
             <h2>Despre Noi</h2>
             <p>
-              La salonul nostru de frumusețe din Chișinău, ne dedicăm să oferim servicii de înaltă calitate care evidențiază frumusețea ta naturală. 
+              La salonul nostru de frumusețe, ne dedicăm să oferim servicii de înaltă calitate care evidențiază frumusețea ta naturală. 
               Echipa noastră de profesioniști este mereu la curent cu cele mai noi tendințe și tehnici.
             </p>
             <p>
@@ -77,20 +77,20 @@
       <section id="contact">
         <div class="contact-container reveal">
           <div class="contact-text">
-            <h2>Contact Us</h2>
-            <p>Have questions, suggestions, or just want to chat? Reach out to us below. We'd love to hear from you!</p>
+            <h2>Contactează-ne</h2>
+            <p>Ai întrebări sau sugestii? Scrie-ne mai jos, ne bucurăm să te ascultăm!</p>
           </div>
       
-          <form class="contact-form">
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+          <form class="contact-form" method="POST" action="http://localhost:5000/contact">
+              <input type="text" id="name" name="name" placeholder="Nume" required />
+              <input type="email" id="email" name="email" placeholder="Adresa de email" required />
+              <textarea id="message" name="message" rows="5" placeholder="Mesajul tău" required></textarea>
+              <button type="submit">Trimite mesajul</button>
           </form>
         </div>
       </section>
 
-      <footer>
+      <footer id = 'footer'>
         <p>&copy; 2025 Beauty Salon Chișinău</p>
       </footer>
     

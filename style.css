@@ -320,3 +320,9 @@
 .contact-form button:hover {
   background-color: #ff4f81;
 }
+
+#footer {
+  background-color: #fff0f5;
+  padding: 5rem 2rem;
+  
+}
