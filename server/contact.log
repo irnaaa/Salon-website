@@ -19,3 +19,16 @@
   message: 'hello'
 }
 🕒 Recieved at: 2025-08-19T13:33:28.334Z
+✅ Server is running on http://localhost:4000
+📩 Form data received: {
+  name: 'Irina Vîlcu',
+  email: 'irina.vilcu230@gmail.com',
+  message: 'ni'
+}
+🕒 Recieved at: 2025-08-20T12:07:33.150Z
+📩 Form data received: {
+  name: 'Irina Vîlcu',
+  email: 'irina.vilcu230@gmail.com',
+  message: 'no'
+}
+🕒 Recieved at: 2025-08-20T12:09:05.338Z

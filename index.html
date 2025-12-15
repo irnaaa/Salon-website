@@ -31,27 +31,55 @@
         <div class="services-container">
           
           <div class="service-card reveal">
-            <img src="images/hair.jpg" alt="Frizur&#259;">
+            <div class="card-inner">
+              <div class="card-front">
+            <img src="images/Păr.jpg" alt="Frizură">
             <h3>Stilizarea părului</h3>
             <p>Tunsori, coafuri și culori care te reprezintă.</p>
           </div>
+          <div class="card-back">
+            <button class="see_more_btn" onclick="openModal('Păr')">Vezi mai mult</button>
+          </div>
+          </div>
+          </div>
       
           <div class="service-card reveal">
+            <div class="card-inner">
+              <div class="card-front">
             <img src="images/laminare.jpg" alt="laminare">
             <h3>Laminarea și vopsirea genelor</h3>
             <p>Privire definită și gene perfecte, fără machiaj.</p>
           </div>
+          <div class="card-back">
+             <button class="see_more_btn" onclick="openModal('laminare')">Vezi mai mult</button>
+          </div>
+            </div>
+          </div>
       
           <div class="service-card reveal">
+            <div class="card-inner">
+              <div class="card-front">
             <img src="images/micropigmentare.jpg" alt="Micropigmentare">
             <h3>Micropigmentare</h3>
             <p>Sprâncene, buze și eyeliner perfect conturate, cu un aspect natural și de durată.</p>
           </div>
+          <div class="card-back">
+             <button class="see_more_btn" onclick="openModal('micropigmentare')">Vezi mai mult</button>
+          </div>
+          </div>
+          </div>
 
           <div class="service-card reveal">
+            <div class="card-inner">
+              <div class="card-front">
             <img src="images/henna.jpg" alt="Henna">
             <h3>Vopsirea sprâncenelor cu henna</h3>
             <p>Sprâncene definite, cu o culoare intensă și naturală, obținută din henna.</p>
+          </div>
+          <div class="card-back">
+             <button class="see_more_btn" onclick="openModal('henna')">Vezi mai mult</button>
+          </div>
+          </div>
           </div>
         </div>
       </section>
@@ -93,6 +121,22 @@
       <footer id = 'footer'>
         <p>&copy; 2025 Beauty Salon Chișinău</p>
       </footer>
+
+      <div id = "service-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h3 id = "modal-title">Specialiștii noștri</h3>
+          <ul id="modal-list"></ul>
+          <div id="worker-details" style="display:none; margin-top: 15px;">
+            <div class="worker-container">
+            <img id="worker-photo" src="" alt="Worker Photo" />
+            <div class="worker-info">
+          <h4 id="worker-name"></h4>
+        <ul id="worker-services"></ul>
+      <button onclick="hideWorkerDetails()">Înapoi</button>
+    </div>
+  </div>
+</div>
     
       <script src="script.js"></script>
     
