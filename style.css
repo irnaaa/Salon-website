@@ -14,11 +14,11 @@
     background-color:#fff0f5; 
     overflow: hidden;
   }
-  
+
   nav a {
     border: 1px solid #000000;
-    background-color:#000000;       
-    padding: 6px 12px;            
+    background-color:#000000;
+    padding: 6px 12px;
     border-radius: 4px;           /* optional: slightly rounded corners */
     margin: 0 6px;                /* spacing between links */
     text-decoration: none;       /* removes underline */
