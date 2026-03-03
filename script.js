@@ -39,21 +39,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const services = {
   "Păr": [
-    { name: "Ludmila Hacina", 
-      photo: "images/Ludmila.jpg", 
-      services: [
-      { name: "Vopsire standard", price: "1000 - 3500 MDL" },
-        { name: "Vopsire Balayage", price: "4000 - 6500 MDL" },
-        { name: "Decolorare rădăcină", price: "1700 - 3000 MDL" },
-        { name: "Tonare", price: "1000 - 3000 MDL" },
-        { name: "Tonare din blond în natural", price: "1500 - 3000 MDL" },
-        { name: "Frezură", price: "400 - 800 MDL" },
-        { name: "Aranjare", price: "600 - 1500 MDL" },
-        { name: "Tranatament Keune", price: "700 - 1400 MDL" }
-    ]
-  },
-    { name: "Maria Pop", photo: "images/maria.jpg", services: ["Îngrijire păr", "Coafuri"] }
-  ],
+      {
+          name: "Elena Radu",
+          photo: "images/hair_1.jpg",
+          services: [
+              { name: "Tuns", price: "300 - 700 MDL" },
+              { name: "Spălat și uscat", price: "200 - 500 MDL" },
+              { name: "Vopsire Ombre", price: "3500 - 6000 MDL" },
+              { name: "Tratament Nutritiv", price: "800 - 1500 MDL" }
+          ]
+      },
+      {
+          name: "Andrei Ciobanu",
+          photo: "images/hair_2.jpg",
+          services: [
+              { name: "Tuns bărbați", price: "200 - 400 MDL" },
+              { name: "Tuns și contur", price: "300 - 500 MDL" },
+              { name: "Vopsire păr scurt", price: "1000 - 2000 MDL" }
+          ]
+      }
+      ],
   "laminare": [
     { name: "Ioana Ionescu", photo: "images/ioana.jpg", services: ["Laminare gene", "Vopsire gene"] }
   ],
@@ -75,39 +80,56 @@ const workerName = document.getElementById('worker-name');
 const workerServices = document.getElementById('worker-services');
 
 function openModal(service) {
-  modal.style.display = 'block';
-  workerDetails.style.display = 'none';
-  modalList.style.display = 'block';
-  modalTitle.textContent = `Specialiștii pentru ${service}`;
+    modal.style.display = 'block';
+    workerDetails.style.display = 'none';
+    modalList.style.display = 'block';
+    modalTitle.textContent = `Specialiștii pentru ${service}`;
 
-  modalList.innerHTML = '';
-  services[service].forEach(worker => {
-    const li = document.createElement('li');
-   li.innerHTML = `
-  <span class="worker-name">${worker.name}</span>
-  <button class="details-btn" onclick='showWorkerDetails(${JSON.stringify(worker)})'>
-    Detalii
-  </button>
-`;
+    modalList.innerHTML = '';
 
-    modalList.appendChild(li);
-  });
+    services[service].forEach(worker => {
+        const li = document.createElement('li');
+        li.className = "worker-item";
+
+        li.innerHTML = `
+      <span class="worker-name">${worker.name}</span>
+      <button class="details-btn">Detalii</button>
+    `;
+
+        // Add event listener properly
+        li.querySelector('.details-btn').addEventListener('click', () => {
+            showWorkerDetails(worker);
+            modalList.style.display = 'none';
+            workerDetails.style.display = 'block';
+            workerPhoto.src = worker.photo;
+            workerName.textContent = worker.name;
+        });
+
+        modalList.appendChild(li);
+    });
 }
 
 function showWorkerDetails(worker) {
-  modalList.style.display = 'none';
-  workerDetails.style.display = 'block';
+    const servicesList = document.getElementById("worker-services");
+    servicesList.innerHTML = ""; // clear previous
 
-  workerPhoto.src = worker.photo;
-  workerPhoto.alt = worker.name;
-  workerName.textContent = worker.name;   // ✅ show worker name
+    worker.services.forEach(service => {
+        const div = document.createElement("div");
+        div.className = "service-item";
 
-  workerServices.innerHTML = '';
-  worker.services.forEach(s => {
-  const serviceLi = document.createElement('li');
-  serviceLi.textContent = `${s.name} - ${s.price}`;
-  workerServices.appendChild(serviceLi);
-});
+        // If service has name & price
+        if (typeof service === "object") {
+            div.innerHTML = `
+        <span class="service-name">${service.name}</span>
+        <span class="service-price">${service.price}</span>
+      `;
+        } else {
+            // fallback for plain text services
+            div.innerHTML = `<span class="service-name">${service}</span>`;
+        }
+
+        servicesList.appendChild(div);
+    });
 }
 
 function hideWorkerDetails() {
@@ -125,3 +147,5 @@ window.onclick = function(event) {
     closeModal();
   }
 }
+
+

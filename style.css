@@ -59,21 +59,22 @@
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
   }
-  
-  #hero button {
+
+.hero-btn {
+    display: inline-block;
     background-color: #ff6f91;
-    border: none;
     padding: 1rem 2rem;
     font-size: 1rem;
     color: white;
     border-radius: 5px;
-    cursor: pointer;
+    text-decoration: none;
     transition: background 0.3s ease;
-  }
-  
-  #hero button:hover {
+    cursor: pointer;
+}
+
+.hero-btn:hover {
     background-color: #ff4f81;
-  }
+}
   
   * {
     box-sizing: border-box;
@@ -277,25 +278,41 @@
   margin-bottom: 10px;
 }
 
-#worker-services li {
-  padding: 3px 0;
-   list-style-type: none; 
+/* Elegant service cards for modal */
+#worker-services {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    margin-top: 10px;
 }
 
-.worker-container {
-  display: flex;
-  align-items: flex-start; /* align image + text at the top */
-  gap: 20px;              /* space between photo and text */
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #ffe0f0, #fff0f5);
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#worker-photo {
-  max-width: 150px;
-  border-radius: 10px;
-  object-fit: cover;
+.service-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
-.worker-info {
-  flex: 1; /* take up remaining space */
+.service-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.service-price {
+    font-weight: 500;
+    color: #ff4f81;
+    font-size: 0.95rem;
 }
 
 
@@ -503,3 +520,127 @@
   letter-spacing: 0.3px;      /* tiny spacing for elegance */
 }
 
+.signup-content {
+    background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.signup-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #000;
+    position: relative;
+}
+
+.signup-content h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #ff6f91;
+    margin: 10px auto 0;
+    border-radius: 4px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.signup-form input {
+    padding: 0.9rem;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.signup-form input:focus {
+    outline: none;
+    border-color: #ff6f91;
+    box-shadow: 0 0 8px rgba(255,111,145,0.3);
+}
+
+.signup-btn-submit {
+    background: linear-gradient(135deg, #ff6f91, #ff4f81);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.signup-btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+#signup-modal .modal-content {
+    background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+#signup-modal h2 {
+    color: #000;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+#signup-modal button {
+    background: linear-gradient(135deg, #ff6f91, #ff4f81);
+    border-radius: 25px;
+}
+
+.success-message {
+    display: none;
+    margin: 20px auto 0;
+    padding: 15px;
+    max-width: 500px;
+    background: linear-gradient(135deg, #ff6f91, #ff4f81);
+    color: white;
+    border-radius: 10px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: fadeIn 0.5s ease;
+}
+
+#signup-page .signup-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ff4f81 !important; /* pink */
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+/* Decorative underline */
+#signup-page .signup-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #ff4f81;
+    margin: 12px auto 0;
+    border-radius: 5px;
+}
+
+/* Optional: soft animation */
+#signup-page .signup-title {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

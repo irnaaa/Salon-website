@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Înscriere</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color:#fff0f5;">
+
+<section style="padding:5rem 2rem; text-align:center;">
+    <h2 class="signup-title">Înscriere</h2>
+
+    <form id="signup-form" class="contact-form" style="max-width:500px; margin:0 auto;">
+        <input type="text" placeholder="Nume complet" required>
+        <input type="tel" placeholder="Număr telefon" required>
+        <input type="email" placeholder="Email" required>
+        <button type="submit">Trimite</button>
+    </form>
+
+    <div id="success-message" class="success-message">
+        💖 Mulțumim! Programarea ta a fost trimisă cu succes.
+    </div>
+
+</section>
+
+<script>
+    document.getElementById("signup-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const successMessage = document.getElementById("success-message");
+
+        successMessage.style.display = "block";
+
+        this.reset();
+
+        setTimeout(() => {
+            successMessage.style.display = "none";
+        }, 4000);
+    });
+</script>
+
+</body>
+</html>
